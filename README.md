@@ -102,8 +102,6 @@ var popup = new dmuka.Popup({
                             text: "Yes",
                             classes: "my-footer-button-yes-class",
                             id: "yes",
-                            // Enter
-                            key: 13,
                             focus: true
                         },
                         {
