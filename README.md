@@ -27,7 +27,7 @@ var popup = new dmuka.Popup({
             width: "200px",
             /* Popup window element height */
             // Default : "50%"
-            height: "90px",
+            height: "100px",
             /* Popup window element positionX */
             // Default : "center"
             // Values = [ "left", "center", "right", <string> ]
