@@ -1,0 +1,23 @@
+.dmuka-popup[data-theme="dark"] .dmuka-popup-window {
+    border-color: #a0a0a0;
+}
+
+.dmuka-popup[data-theme="dark"] .dmuka-popup-header {
+    background-color: #2d2d2d;
+    color: #fff;
+}
+
+.dmuka-popup[data-theme="dark"] .dmuka-popup-footer-button {
+    background-color: #e8e8e8;
+    border-color: #c7c7c7;
+}
+
+.dmuka-popup[data-theme="dark"] .dmuka-popup-footer-button:hover,
+.dmuka-popup[data-theme="dark"] .dmuka-popup-footer-button:focus {
+    background-color: #c5c5c5;
+    border-color: #8c8c8c;
+}
+
+.dmuka-popup[data-theme="dark"] .dmuka-popup-closebutton {
+    color: #fff;
+}

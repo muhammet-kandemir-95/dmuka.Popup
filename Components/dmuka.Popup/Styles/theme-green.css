@@ -1,0 +1,19 @@
+.dmuka-popup[data-theme="green"] .dmuka-popup-window {
+    border-color: #5bad68;
+}
+
+.dmuka-popup[data-theme="green"] .dmuka-popup-header {
+    background-color: #aaf5b6;
+    border-bottom: 1px solid #63bd71;
+}
+
+.dmuka-popup[data-theme="green"] .dmuka-popup-footer-button {
+    background-color: #aaf5b6;
+    border-color: #7bc587;
+}
+
+.dmuka-popup[data-theme="green"] .dmuka-popup-footer-button:hover,
+.dmuka-popup[data-theme="green"] .dmuka-popup-footer-button:focus {
+    background-color: #92de9f;
+    border-color: #89c192;
+}

@@ -1,0 +1,19 @@
+.dmuka-popup[data-theme="yellow"] .dmuka-popup-window {
+    border-color: #b3b745;
+}
+
+.dmuka-popup[data-theme="yellow"] .dmuka-popup-header {
+    background-color: #fdffc6;
+    border-bottom: 1px solid #e0e29e;
+}
+
+.dmuka-popup[data-theme="yellow"] .dmuka-popup-footer-button {
+    background-color: #f9fbb1;
+    border-color: #c8ca8f;
+}
+
+.dmuka-popup[data-theme="yellow"] .dmuka-popup-footer-button:hover,
+.dmuka-popup[data-theme="yellow"] .dmuka-popup-footer-button:focus {
+    background-color: #e8ea9c;
+    border-color: #9fa07c;
+}

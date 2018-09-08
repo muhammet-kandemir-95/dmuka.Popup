@@ -181,10 +181,6 @@ dmuka.Popup = function (parameters) {
             if (private.variable.firstLoaded === false) {
                 private.variable.firstLoaded = true;
 
-                // Main add to body
-                private.variable.parent.appendChild(private.variable.DOM.main);
-
-                private.event.load.call(me);
             }
 
             private.variable.popupState = "visible";
@@ -211,7 +207,7 @@ dmuka.Popup = function (parameters) {
             private.variable.DOM.main.setAttribute("data-state", private.variable.popupState);
             private.event.close.call(me);
 
-            if (private.variable.autoDisposeOnClose === true){
+            if (private.variable.autoDisposeOnClose === true) {
                 private.function.dispose();
             }
         }
@@ -227,6 +223,7 @@ dmuka.Popup = function (parameters) {
         private.function.close();
         private.variable.DOM.main.remove();
         window.removeEventListener("resize", private.event.windowOnResize);
+        document.removeEventListener("keydown", private.event.documentOnKeyDown);
     };
     public.dispose = private.function.dispose;
 
@@ -355,6 +352,10 @@ dmuka.Popup = function (parameters) {
         });
         // Load close button event --END
 
+        // Set theme --BEGIN
+        private.variable.DOM.main.setAttribute("data-theme", private.variable.theme);
+        // Set theme --END
+
         // Set classes --BEGIN
         private.variable.DOM.main.setAttribute("class", "dmuka-popup " + private.variable.classes);
         private.variable.DOM.window.setAttribute("class", "dmuka-popup-window " + private.variable.window.classes);
@@ -410,6 +411,7 @@ dmuka.Popup = function (parameters) {
             private.variable.positionY = value;
             private.function.calculatePositionAndSize();
         }
+        // Add set to properties --END
 
         private.function.calculatePositionAndSize();
 
@@ -428,7 +430,7 @@ dmuka.Popup = function (parameters) {
 
         // If exists key footerButton then
         if (footerButtonsForKeyDown.length > 0) {
-            private.variable.DOM.main.addEventListener("keydown", function (e) {
+            private.event.documentOnKeyDown = function (e) {
                 for (var footerButtonForKeyDownIndex = 0; footerButtonForKeyDownIndex < footerButtonsForKeyDown.length; footerButtonForKeyDownIndex++) {
                     var footerButtonForKeyDown = footerButtonsForKeyDown[footerButtonForKeyDownIndex];
 
@@ -436,7 +438,8 @@ dmuka.Popup = function (parameters) {
                         footerButtonForKeyDown.DOM.click();
                     }
                 }
-            });
+            };
+            document.addEventListener("keydown", private.event.documentOnKeyDown);
         }
         // Add footer button left and right direction events --END
 
@@ -446,7 +449,11 @@ dmuka.Popup = function (parameters) {
         };
         window.addEventListener("resize", private.event.windowOnResize);
         // Add window resize events --END
-        // Add set to properties --END
+
+        // Main add to body
+        private.variable.parent.appendChild(private.variable.DOM.main);
+
+        private.event.load.call(me);
     }
 
     // --------------------

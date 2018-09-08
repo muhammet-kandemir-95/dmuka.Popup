@@ -1,0 +1,15 @@
+.dmuka-popup[data-theme="blue"] .dmuka-popup-header {
+    background-color: #daeef5;
+    border-bottom: 1px solid #b7c9d0;
+}
+
+.dmuka-popup[data-theme="blue"] .dmuka-popup-footer-button {
+    background-color: #daeef5;
+    border-color: #bfd0d6;
+}
+
+.dmuka-popup[data-theme="blue"] .dmuka-popup-footer-button:hover,
+.dmuka-popup[data-theme="blue"] .dmuka-popup-footer-button:focus {
+    background-color: #bee0ec;
+    border-color: #90aab3;
+}
