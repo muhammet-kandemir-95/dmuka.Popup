@@ -73,8 +73,7 @@ var popup = new dmuka.Popup({
                             text: "Submit",
                             classes: "",
                             id: "submit",
-                            focus: true,
-                            key: 13
+                            focus: true
                         }
                     ]
                 */
@@ -89,9 +88,7 @@ var popup = new dmuka.Popup({
                         // Must fill!
                         id: <string>,
                         // Default : false
-                        focus: <boolean>,
-                        // Default : undefined
-                        key: <int>
+                        focus: <boolean>
                     },
                     ...
                 ]
@@ -101,15 +98,12 @@ var popup = new dmuka.Popup({
                         {
                             text: "Yes",
                             classes: "my-footer-button-yes-class",
-                            id: "yes",
-                            focus: true
+                            id: "yes"
                         },
                         {
                             text: "No",
                             classes: "my-footer-button-no-class",
-                            id: "no",
-                            // Escape
-                            key: 27
+                            id: "no"
                         }
                     ],
 
