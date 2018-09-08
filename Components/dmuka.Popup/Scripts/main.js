@@ -92,13 +92,13 @@ dmuka.Popup = function (parameters) {
     private.variable.DOM = {
         main: document.createElement("div"),
         window: document.createElement("div"),
-        closeButton: document.createElement("button"),
         header: document.createElement("div"),
         content: document.createElement("div"),
         footer: {
             content: document.createElement("div"),
             buttons: []
-        }
+        },
+        closeButton: document.createElement("button")
     };
     // Fill footer.buttons by private.variable.footer.buttons.length
     for (var footerButtonIndex = 0; footerButtonIndex < private.variable.footer.buttons.length; footerButtonIndex++) {
@@ -113,11 +113,6 @@ dmuka.Popup = function (parameters) {
         window: {
             get: function () {
                 return private.variable.DOM.window;
-            }
-        },
-        closeButton: {
-            get: function () {
-                return private.variable.DOM.closeButton;
             }
         },
         header: {
@@ -140,6 +135,11 @@ dmuka.Popup = function (parameters) {
                 get: function () {
                     return private.variable.DOM.footer.buttons;
                 }
+            }
+        },
+        closeButton: {
+            get: function () {
+                return private.variable.DOM.closeButton;
             }
         }
     };
