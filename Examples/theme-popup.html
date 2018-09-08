@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <title>
+        dmuka.Popup - Muhammet Kandemir
+    </title>
+    <link rel="stylesheet" type="text/css" href="../Components/dmuka.Popup/Styles/main.css">
+    <link rel="stylesheet" type="text/css" href="../Components/dmuka.Popup/Styles/theme-blue.css">
+    <link rel="stylesheet" type="text/css" href="../Components/dmuka.Popup/Styles/theme-dark.css">
+    <link rel="stylesheet" type="text/css" href="../Components/dmuka.Popup/Styles/theme-gray.css">
+    <link rel="stylesheet" type="text/css" href="../Components/dmuka.Popup/Styles/theme-green.css">
+    <link rel="stylesheet" type="text/css" href="../Components/dmuka.Popup/Styles/theme-yellow.css">
+    <link rel="stylesheet" type="text/css" href="../Components/dmuka.Popup/Styles/theme-red.css">
+</head>
+
+<body>
+    <a href="..">Back</a>
+    <h1>
+        Example Theme Popup
+    </h1>
+
+    <button onclick="showPopup('');">Default Theme</button>
+    <button onclick="showPopup('blue');">Blue</button>
+    <button onclick="showPopup('green');">Green</button>
+    <button onclick="showPopup('yellow');">Yellow</button>
+    <button onclick="showPopup('red');">Red</button>
+    <button onclick="showPopup('gray');">Gray</button>
+    <button onclick="showPopup('dark');">Dark</button>
+
+    <script src="../Components/dmuka.Popup/Scripts/main.js"></script>
+    <script>
+        function showPopup(theme) {
+            var popup = new dmuka.Popup({
+                theme: theme,
+                width: "200px",
+                height: "100px",
+                header: {
+                    text: "Question"
+                },
+                content: {
+                    htmlOrChild: "Do you want continue?"
+                },
+                footer: {
+                    buttons: [
+                        {
+                            text: "Yes",
+                            id: "yes"
+                        },
+                        {
+                            text: "No",
+                            id: "no",
+                            key: 27,
+                            focus: true
+                        }
+                    ]
+                }
+            });
+
+            popup.open();
+        }
+    </script>
+</body>
+
+</html>

@@ -2,7 +2,7 @@
 
 <head>
     <title>
-        Muhammet Kandemir - dmuka.Popup
+        dmuka.Popup - Muhammet Kandemir
     </title>
     <link rel="stylesheet" type="text/css" href="/Components/dmuka.Popup/Styles/main.css">
     <link rel="stylesheet" type="text/css" href="/Components/dmuka.Popup/Styles/theme-blue.css">
@@ -14,177 +14,25 @@
 </head>
 
 <body>
-    <button onclick="openPopup();">Click and Open Popup</button>
-
-    <script src="/Components/dmuka.Popup/Scripts/main.js"></script>
-    <script>
-        var popup = new dmuka.Popup({
-            /* Variables --BEGIN */
-            // --------------------
-
-            /* Popup parent element */
-            // Default : document.body
-            parent: document.body,
-            /* Popup theme name by css */
-            // Default : ""
-            theme: "red",
-            /* Popup main element classes */
-            // Default : ""
-            classes: "my-main-class",
-            /* If this value is true then when popup closed, trigger dispose function as auto and you can't use this popup */
-            // Default : true
-            autoDisposeOnClose: false,
-            /* Popup window element width */
-            // Default : "50%"
-            width: "200px",
-            /* Popup window element height */
-            // Default : "50%"
-            height: "100px",
-            /* Popup window element positionX */
-            // Default : "center"
-            // Values = [ "left", "center", "right", <string> ]
-            positionX: "center",
-            /* Popup window element positionY */
-            // Default : "middle"
-            // Values = [ "top", "middle", "bottom", <string> ]
-            positionY: "middle",
-            window: {
-                /* Popup window element classes */
-                // Default : ""
-                classes: "my-window-class"
-            },
-            header: {
-                /* Popup header element classes */
-                // Default : ""
-                classes: "my-header-class",
-                /* Popup header element innerText */
-                // Default : ""
-                text: "My New Popup",
-                /* Popup header element enable */
-                // Default : true
-                enable: true
-            },
-            content: {
-                /* Popup content element classes */
-                // Default : ""
-                classes: "my-content-class",
-                /* Popup content element innerText */
-                // Default : ""
-                // Values = [ <string>, <element> ]
-                htmlOrChild: "Do you want continue?"
-            },
-            footer: {
-                /* Popup footer element classes */
-                // Default : ""
-                classes: "my-footer-class",
-                /* Popup footer element innerText */
-                // Default : 
-                /*
-                    [
-                        {
-                            text: "Submit",
-                            classes: "",
-                            id: "submit",
-                            focus: true,
-                            key: 13
-                        }
-                    ]
-                */
-                // Values = 
-                /*
-                [ 
-                    {
-                        // Default : ""
-                        text: <string>,
-                        // Default : ""
-                        classes: <string>,
-                        // Must fill!
-                        id: <string>,
-                        // Default : false
-                        focus: <boolean>,
-                        // Default : undefined
-                        key: <int>
-                    },
-                    ...
-                ]
-                */
-                buttons:
-                    [
-                        {
-                            text: "Yes",
-                            classes: "my-footer-button-yes-class",
-                            id: "yes",
-                            // Enter
-                            key: 13,
-                            focus: true
-                        },
-                        {
-                            text: "No",
-                            classes: "my-footer-button-no-class",
-                            id: "no",
-                            // Escape
-                            key: 27
-                        }
-                    ],
-
-                /* Popup footer element enable */
-                // Default : true
-                enable: true
-            },
-            closeButton: {
-                /* Popup closeButton element classes */
-                // Default : ""
-                classes: "my-close-button-class"
-            },
-
-            // --------------------
-            /* Variables --END */
-
-            /* Events --BEGIN */
-            // --------------------
-
-            // This event working when class create instance
-            onLoad: function () {
-                // this = popup
-
-                var popupContent = this.DOM.content.get();
-                console.log(popupContent, "My Content - onLoad");
-            },
-            // This event working when run "open" function
-            onOpen: function () {
-                // this = popup
-
-                var popupContent = this.DOM.content.get();
-                console.log(popupContent, "My Content - onOpen");
-                console.log("Trigger open event");
-            },
-            // This event working when run "close" function
-            onClose: function () {
-                // this = popup
-
-                var popupContent = this.DOM.content.get();
-                console.log(popupContent, "My Content - onClose");
-                console.log("Trigger close event");
-            },
-            // This event working when click to any footer button
-            onSubmitFooter: function (id) {
-                // this = popup
-
-                var popupContent = this.DOM.content.get();
-                console.log(popupContent, "My Content - onSubmitFooter");
-
-                var footerButtonId = id;
-                console.log("Clicked : " + footerButtonId + " ID Button");
-            }
-
-            // --------------------
-            /* Events --END */
-        });
-
-        function openPopup() {
-            popup.open();
-        }
-    </script>
+    <h1>
+        Welcome dmuka.Popup Documentation
+    </h1>
+    <p>
+        <ul>
+            <li>
+                <a href="Examples/show-popup.html">Show Popup</a>
+            </li>
+            <li>
+                <a href="Examples/custom-footer.html">Custom Footer</a>
+            </li>
+            <li>
+                <a href="Examples/theme-popup.html">Theme Popup</a>
+            </li>
+            <li>
+                <a href="Examples/disable.html">Disable Footer or Header</a>
+            </li>
+        </ul>
+    </p>
 </body>
 
 </html>

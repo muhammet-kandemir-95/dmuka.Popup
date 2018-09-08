@@ -22,10 +22,11 @@ dmuka.Popup = function (parameters) {
     // --------------------
 
     // Declare parameter variable --BEGIN
+    parameters = parameters || {};
     private.variable.parent = parameters.parent || document.body;
     private.variable.theme = parameters.theme || "";
     private.variable.classes = parameters.classes || "";
-    private.variable.autoDisposeOnClose = parameters.autoDisposeOnClose === true;
+    private.variable.autoDisposeOnClose = parameters.autoDisposeOnClose === true || parameters.autoDisposeOnClose === undefined;
 
     private.variable.width = parameters.width || "50%";
     public.width = {
@@ -60,32 +61,31 @@ dmuka.Popup = function (parameters) {
     };
 
     private.variable.window = parameters.window || {};
-    private.variable.window.classes = parameters.window.classes || "";
+    private.variable.window.classes = private.variable.window.classes || "";
 
     private.variable.header = parameters.header || {};
-    private.variable.header.classes = parameters.header.classes || "";
-    private.variable.header.text = parameters.header.text || "";
-    private.variable.header.enable = parameters.header.enable === true;
+    private.variable.header.classes = private.variable.header.classes || "";
+    private.variable.header.text = private.variable.header.text || "";
+    private.variable.header.enable = private.variable.header.enable === true || private.variable.header.enable === undefined;
 
     private.variable.content = parameters.content || {};
-    private.variable.content.classes = parameters.content.classes || "";
-    private.variable.content.htmlOrChild = parameters.content.htmlOrChild || "";
+    private.variable.content.classes = private.variable.content.classes || "";
+    private.variable.content.htmlOrChild = private.variable.content.htmlOrChild || "";
 
     private.variable.footer = parameters.footer || {};
-    private.variable.footer.classes = parameters.footer.classes || "";
-    private.variable.footer.buttons = parameters.footer.buttons || [
+    private.variable.footer.classes = private.variable.footer.classes || "";
+    private.variable.footer.buttons = private.variable.footer.buttons || [
         {
             text: "Submit",
             classes: "",
             id: "submit",
-            focus: true,
-            key: 13
+            focus: true
         }
     ];
-    private.variable.footer.enable = parameters.footer.enable === true;
+    private.variable.footer.enable = private.variable.footer.enable === true || private.variable.footer.enable === undefined;
 
     private.variable.closeButton = parameters.closeButton || {};
-    private.variable.closeButton.classes = parameters.closeButton.classes || "";
+    private.variable.closeButton.classes = private.variable.closeButton.classes || "";
     // Declare parameter variable --END
 
     // Declare DOM elements --BEGIN
@@ -175,27 +175,25 @@ dmuka.Popup = function (parameters) {
     // --------------------
 
     private.function.open = function () {
-        // Only working when popupState is "visible"
         if (private.variable.popupState === "hidden") {
-            // If popup first opening then we should main add to parent
-            if (private.variable.firstLoaded === false) {
-                private.variable.firstLoaded = true;
+            private.variable.DOM.main.setAttribute("data-lock", "true");
 
-            }
+            setTimeout(() => {
+                // Only working when popupState is "visible"
+                private.variable.popupState = "visible";
+                private.variable.DOM.main.setAttribute("data-state", private.variable.popupState);
 
-            private.variable.popupState = "visible";
-            private.variable.DOM.main.setAttribute("data-state", private.variable.popupState);
+                for (var footerButtonIndex = 0; footerButtonIndex < private.variable.footer.buttons.length; footerButtonIndex++) {
+                    // If user want focus to button then
+                    if (private.variable.footer.buttons[footerButtonIndex].focus === true) {
+                        private.variable.DOM.footer.buttons[footerButtonIndex].focus();
+                    }
 
-            for (var footerButtonIndex = 0; footerButtonIndex < private.variable.footer.buttons.length; footerButtonIndex++) {
-                // If user want focus to button then
-                if (private.variable.footer.buttons[footerButtonIndex].focus === true) {
-                    private.variable.DOM.footer.buttons[footerButtonIndex].focus();
+                    private.variable.DOM.footer.buttons.push(document.createElement("button"));
                 }
 
-                private.variable.DOM.footer.buttons.push(document.createElement("button"));
-            }
-
-            private.event.open.call(me);
+                private.event.open.call(me);
+            }, 100);
         }
     };
     public.open = private.function.open;
@@ -203,6 +201,8 @@ dmuka.Popup = function (parameters) {
     private.function.close = function () {
         // Only working when popupState is "visible"
         if (private.variable.popupState === "visible") {
+            private.variable.DOM.main.setAttribute("data-lock", "false");
+
             private.variable.popupState = "hidden";
             private.variable.DOM.main.setAttribute("data-state", private.variable.popupState);
             private.event.close.call(me);
@@ -221,9 +221,11 @@ dmuka.Popup = function (parameters) {
         public.disposed = true;
 
         private.function.close();
-        private.variable.DOM.main.remove();
         window.removeEventListener("resize", private.event.windowOnResize);
-        document.removeEventListener("keydown", private.event.documentOnKeyDown);
+
+        setTimeout(() => {
+            private.variable.DOM.main.remove();
+        }, 500);
     };
     public.dispose = private.function.dispose;
 
@@ -426,20 +428,6 @@ dmuka.Popup = function (parameters) {
                     DOM: private.variable.DOM.footer.buttons[footerButtonIndex]
                 });
             }
-        }
-
-        // If exists key footerButton then
-        if (footerButtonsForKeyDown.length > 0) {
-            private.event.documentOnKeyDown = function (e) {
-                for (var footerButtonForKeyDownIndex = 0; footerButtonForKeyDownIndex < footerButtonsForKeyDown.length; footerButtonForKeyDownIndex++) {
-                    var footerButtonForKeyDown = footerButtonsForKeyDown[footerButtonForKeyDownIndex];
-
-                    if (footerButtonForKeyDown.key === e.which) {
-                        footerButtonForKeyDown.DOM.click();
-                    }
-                }
-            };
-            document.addEventListener("keydown", private.event.documentOnKeyDown);
         }
         // Add footer button left and right direction events --END
 

@@ -12,9 +12,12 @@
     pointer-events: none;
 }
 
+.dmuka-popup[data-lock="true"] {
+    pointer-events: all;
+}
+
 .dmuka-popup[data-state="visible"] {
     opacity: 1;
-    pointer-events: all;
 }
 
 .dmuka-popup-window {
@@ -66,6 +69,10 @@
 .dmuka-popup[data-active-header="false"][data-active-footer="true"] .dmuka-popup-content {
     height: calc(100% - 30px);
     padding-top: 27px;
+}
+
+.dmuka-popup[data-active-header="true"][data-active-footer="false"] .dmuka-popup-content {
+    height: calc(100% - 30px);
 }
 
 .dmuka-popup[data-active-header="false"][data-active-footer="false"] .dmuka-popup-content {
