@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <title>
         dmuka.Popup - Muhammet Kandemir
     </title>
@@ -28,7 +29,7 @@
     <script>
         function showPopup(headerEnable, footerEnable) {
             document.querySelector("p").innerText = "";
-            
+
             var popup = new dmuka.Popup({
                 width: "200px",
                 height: "100px",
@@ -54,10 +55,10 @@
                         }
                     ]
                 },
-                onClose: function(){
+                onClose: function () {
                     document.querySelector("p").innerText += "\r\nPopup closed.";
                 },
-                onSubmitFooter: function(id){
+                onSubmitFooter: function (id) {
                     document.querySelector("p").innerText = "You clicked " + id + " button.";
                 }
             });
