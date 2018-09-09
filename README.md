@@ -169,28 +169,35 @@ Bu değişken içerisinde component'ın içerisinde DOM(Document Object Model. �
 
 ```javascript
 popup.DOM = {
+  //Main Content
   main: {
-    get: <function():DOM> //Main Content
+    get: <function():DOM>
   },
+  //Main Content - Window
   window: {
-    get: <function():DOM> //Main Content - Window
+    get: <function():DOM>
   },
+  //Main Content - Window - Header
   header: {
-    get: <function():DOM> //Main Content - Window - Header
+    get: <function():DOM>
   },
+  //Main Content - Window - Content
   content: {
-    get: <function():DOM> //Main Content - Window - Content
+    get: <function():DOM>
   },
   footer: {
+      //Main Content - Window - Footer
       content: {
-        get: <function():DOM> //Main Content - Window - Footer
+        get: <function():DOM> 
       },
+      //[ Main Content - Window - Footer Button1, Main Content - Window - Footer Button2, ... ]
       buttons: {
-        get: <function():DOM[]> //[ Main Content - Window - Footer Button1, Main Content - Window - Footer Button2, ... ]
+        get: <function():DOM[]>
       },
   },
+  //Main Content - Window - Close Button
   closeButton: {
-    get: <function():DOM> //Main Content - Window - Close Button
+    get: <function():DOM>
   }
 }
 ```
