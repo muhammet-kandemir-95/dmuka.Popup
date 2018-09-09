@@ -415,20 +415,6 @@ dmuka.Popup = function (parameters) {
 
         private.function.calculatePositionAndSize();
 
-        // Add footer button left and right direction events --BEGIN
-        var footerButtonsForKeyDown = [];
-        for (var footerButtonIndex = 0; footerButtonIndex < private.variable.DOM.footer.buttons.length; footerButtonIndex++) {
-            var footerButton = private.variable.footer.buttons[footerButtonIndex];
-
-            if (footerButton.key !== undefined) {
-                footerButtonsForKeyDown.push({
-                    key: footerButton.key,
-                    DOM: private.variable.DOM.footer.buttons[footerButtonIndex]
-                });
-            }
-        }
-        // Add footer button left and right direction events --END
-
         // Add window resize events --BEGIN
         private.event.windowOnResize = function (e) {
             private.function.calculatePositionAndSize();
