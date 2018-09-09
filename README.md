@@ -70,7 +70,7 @@ Name | Parameters | Return Type | Run Time
 ---- | ---- | ------------- | -----------
 **onLoad** | _()_ | undefined | When reate instance and elements added to body.
 **onOpen** | _()_ | undefined | When execute "[open](#popupopen)" function.
-**onClose** | _()_ | undefined | When execute "[close](#popupclose)" or "[dispose](#popupdispose)"(But "[popupState](#popuppopupstate)" is "visible") function.
+**onClose** | _()_ | undefined | When execute "[close](#popupclose)" or "[dispose](#popupdispose)"(But when "[popupState](#popuppopupstate)" is "visible") function.
 **onSubmitFooter** | _(footerButtonId)_ | undefined | When click to any footer button.
 
 #### Örnek Kullanım
