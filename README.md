@@ -7,94 +7,115 @@ Bu kütüphaneyi kullanarak web siteleriniz üzerinde kolaylıkla **popup** gös
 * Önemli bildirimler
 
 ## Create Instance
+
+### Variables
+Name | Type | Default Value | Description
+---- | ---- | ------------- | -----------
+parent | HTML Element | document.body | Popup parent element.
+theme | string:enum | "" | Popup theme name by css.
+classes | string:class | "" | Popup main element classes.
+autoDisposeOnClose | boolean | true | If this value is true then when popup closed, trigger dispose function as auto.
+width | string:css | "50%" | Popup window element width.
+height | string:css | "50%" | Popup window element height.
+positionX | string:enum, string:css | "center" | Popup window element position X.
+positionY | string:enum, string:css | "middle" | Popup window element position Y.
+window.classes | string:class | "" | Popup window element classes.
+header.classes | string:class | "" | Popup header element classes.
+header.text | string | "" | Popup header element innerText.
+header.enable | boolean | true | Popup header element enable.
+content.classes | string:class | "" | Popup content element classes.
+content.htmlOrChild | string:html, HTML Element | "" | Popup content html or element.
+footer.classes | string:class | "" | Popup footer element classes
+footer.buttons | object[] | [] | Footer button list.
+footer.enable | boolean | true | Popup footer element enable
+closeButton.classes | string:class | "" | Popup closeButton element classes.
+
+#### theme Values
+##### ""
+Default white theme.
+##### "blue"
+Blue color theme.
+##### "green"
+Green color theme.
+##### "yellow"
+Yellow color theme.
+##### "red"
+Red color theme.
+##### "gray"
+Gray color theme.
+##### "dark"
+Dark color theme.
+
+#### positionX Values
+##### "left"
+Left is "20px".
+##### "center"
+Position always is center.
+##### "right"
+Right is "20px".
+##### string
+Left position as css.
+
+#### positionY Values
+##### "top"
+Top is "20px".
+##### "middle"
+Position always is middle.
+##### "bottom"
+Bottom is "20px".
+##### string
+Top position as css.
+
+#### footer.buttons Schema
+```javascript
+{
+  // Default : ""
+  text: <string>,
+  // Default : ""
+  classes: <string>,
+  // Must fill!
+  id: <string>,
+  // Default : false
+  focus: <boolean>
+}
+```
+
+### Events
+Name | Parameters | Return Type | Run Time
+---- | ---- | ------------- | -----------
+onLoad | () | undefined | When reate instance and elements added to body.
+onOpen | () | undefined | When execute "open" function.
+onClose | () | undefined | When execute "close" or "dispose" function.
+onSubmitFooter | (footerButtonId) | undefined | When click to any footer button.
+
+#### Örnek Kullanım
 ```javascript
 var popup = new dmuka.Popup({
             /* Variables --BEGIN */
             // --------------------
-
-            /* Popup parent element */
-            // Default : document.body
+            
             parent: document.body,
-            /* Popup theme name by css */
-            // Default : ""
             theme: "",
-            /* Popup main element classes */
-            // Default : ""
             classes: "my-main-class",
-            /* If this value is true then when popup closed, trigger dispose function as auto and you can't use this popup */
-            // Default : true
             autoDisposeOnClose: false,
-            /* Popup window element width */
-            // Default : "50%"
             width: "200px",
-            /* Popup window element height */
-            // Default : "50%"
             height: "100px",
-            /* Popup window element positionX */
-            // Default : "center"
-            // Values = [ "left", "center", "right", <string> ]
             positionX: "center",
-            /* Popup window element positionY */
-            // Default : "middle"
-            // Values = [ "top", "middle", "bottom", <string> ]
             positionY: "middle",
             window: {
-                /* Popup window element classes */
-                // Default : ""
                 classes: "my-window-class"
             },
             header: {
-                /* Popup header element classes */
-                // Default : ""
                 classes: "my-header-class",
-                /* Popup header element innerText */
-                // Default : ""
                 text: "My New Popup",
-                /* Popup header element enable */
-                // Default : true
                 enable: true
             },
             content: {
-                /* Popup content element classes */
-                // Default : ""
                 classes: "my-content-class",
-                /* Popup content element innerText */
-                // Default : ""
-                // Values = [ <string>, <element> ]
                 htmlOrChild: "Do you want continue?"
             },
             footer: {
-                /* Popup footer element classes */
-                // Default : ""
                 classes: "my-footer-class",
-                /* Popup footer element innerText */
-                // Default : 
-                /*
-                    [
-                        {
-                            text: "Submit",
-                            classes: "",
-                            id: "submit",
-                            focus: true
-                        }
-                    ]
-                */
-                // Values = 
-                /*
-                [ 
-                    {
-                        // Default : ""
-                        text: <string>,
-                        // Default : ""
-                        classes: <string>,
-                        // Must fill!
-                        id: <string>,
-                        // Default : false
-                        focus: <boolean>
-                    },
-                    ...
-                ]
-                */
                 buttons:
                     [
                         {
@@ -108,14 +129,9 @@ var popup = new dmuka.Popup({
                             id: "no"
                         }
                     ],
-
-                /* Popup footer element enable */
-                // Default : true
                 enable: true
             },
             closeButton: {
-                /* Popup closeButton element classes */
-                // Default : ""
                 classes: "my-close-button-class"
             },
 
@@ -124,15 +140,13 @@ var popup = new dmuka.Popup({
 
             /* Events --BEGIN */
             // --------------------
-
-            // This event working when popup add to body as first
+            
             onLoad: function () {
                 // this = popup
 
                 var popupContent = this.DOM.content.get();
                 console.log(popupContent, "My Content - onLoad");
             },
-            // This event working when run "open" function
             onOpen: function () {
                 // this = popup
 
@@ -140,7 +154,6 @@ var popup = new dmuka.Popup({
                 console.log(popupContent, "My Content - onOpen");
                 console.log("Trigger open event");
             },
-            // This event working when run "close" function
             onClose: function () {
                 // this = popup
 
@@ -148,7 +161,6 @@ var popup = new dmuka.Popup({
                 console.log(popupContent, "My Content - onClose");
                 console.log("Trigger close event");
             },
-            // This event working when click to any footer button
             onSubmitFooter: function (id) {
                 // this = popup
 
