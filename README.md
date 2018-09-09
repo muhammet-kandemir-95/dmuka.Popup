@@ -11,24 +11,24 @@ Bu kütüphaneyi kullanarak web siteleriniz üzerinde kolaylıkla **popup** gös
 ### Variables
 Name | Type | Default Value | Description
 ---- | ---- | ------------- | -----------
-parent | HTML Element | document.body | Popup parent element.
-theme | string:enum | "" | Popup theme name by css.
-classes | string:class | "" | Popup main element classes.
-autoDisposeOnClose | boolean | true | If this value is true then when popup closed, trigger dispose function as auto.
-width | string:css | "50%" | Popup window element width.
-height | string:css | "50%" | Popup window element height.
-positionX | string:enum, string:css | "center" | Popup window element position X.
-positionY | string:enum, string:css | "middle" | Popup window element position Y.
-window.classes | string:class | "" | Popup window element classes.
-header.classes | string:class | "" | Popup header element classes.
-header.text | string | "" | Popup header element innerText.
-header.enable | boolean | true | Popup header element enable.
-content.classes | string:class | "" | Popup content element classes.
-content.htmlOrChild | string:html, HTML Element | "" | Popup content html or element.
-footer.classes | string:class | "" | Popup footer element classes
-footer.buttons | object[] | [] | Footer button list.
-footer.enable | boolean | true | Popup footer element enable
-closeButton.classes | string:class | "" | Popup closeButton element classes.
+**parent** | _HTML Element_ | document.body | Popup parent element.
+**theme** | _string:enum_ | "" | Popup theme name by css.
+**classes** | _string:class_ | "" | Popup main element classes.
+**autoDisposeOnClose** | _boolean_ | true | If this value is true then when popup closed, trigger dispose function as auto.
+**width** | _string:css_ | "50%" | Popup window element width.
+**height** | _string:css_ | "50%" | Popup window element height.
+**positionX** | _string:enum_, _string:css_ | "center" | Popup window element position X.
+**positionY** | _string:enum_, _string:css_ | "middle" | Popup window element position Y.
+**window.classes** | _string:class_ | "" | Popup window element classes.
+**header.classes** | _string:class_ | "" | Popup header element classes.
+**header.text** | _string_ | "" | Popup header element innerText.
+**header.enable** | _boolean_ | true | Popup header element enable.
+**content.classes** | _string:class_ | "" | Popup content element classes.
+**content.htmlOrChild** | _string:html_, _HTML Element_ | "" | Popup content html or element.
+**footer.classes** | _string:class_ | "" | Popup footer element classes
+**footer.buttons** | _object_[] | [] | Footer button list.
+**footer.enable** | _boolean_ | true | Popup footer element enable
+**closeButton.classes** | string:class | "" | Popup closeButton element classes.
 
 #### theme Values
 * **""** = Default white theme.
@@ -68,10 +68,10 @@ closeButton.classes | string:class | "" | Popup closeButton element classes.
 ### Events
 Name | Parameters | Return Type | Run Time
 ---- | ---- | ------------- | -----------
-onLoad | () | undefined | When reate instance and elements added to body.
-onOpen | () | undefined | When execute "open" function.
-onClose | () | undefined | When execute "close" or "dispose" function.
-onSubmitFooter | (footerButtonId) | undefined | When click to any footer button.
+**onLoad** | _()_ | undefined | When reate instance and elements added to body.
+**onOpen** | _()_ | undefined | When execute "open" function.
+**onClose** | _()_ | undefined | When execute "close" or "dispose" function.
+**onSubmitFooter** | _(footerButtonId)_ | undefined | When click to any footer button.
 
 #### Örnek Kullanım
 ```javascript
