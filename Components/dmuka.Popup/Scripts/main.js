@@ -153,8 +153,6 @@ dmuka.Popup = function (parameters) {
         }
     };
 
-    private.variable.firstLoaded = false;
-
     // --------------------
     /* Variables --END */
 
