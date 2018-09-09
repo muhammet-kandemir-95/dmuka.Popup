@@ -17,8 +17,8 @@ Name | Type | Default Value | Description
 **autoDisposeOnClose** | _boolean_ | true | If this value is true then when popup closed, trigger dispose function as auto.
 **width** | _string:css_ | "50%" | Popup window element width.
 **height** | _string:css_ | "50%" | Popup window element height.
-**positionX** | _string:enum_, _string:css_ | "center" | Popup window element position X.
-**positionY** | _string:enum_, _string:css_ | "middle" | Popup window element position Y.
+**positionX** | _[string:enum](#positionx-values)_, _string:css_ | "center" | Popup window element position X.
+**positionY** | _[string:enum](#positiony-values)_, _string:css_ | "middle" | Popup window element position Y.
 **window.classes** | _string:class_ | "" | Popup window element classes.
 **header.classes** | _string:class_ | "" | Popup header element classes.
 **header.text** | _string_ | "" | Popup header element innerText.
@@ -26,7 +26,7 @@ Name | Type | Default Value | Description
 **content.classes** | _string:class_ | "" | Popup content element classes.
 **content.htmlOrChild** | _string:html_, _HTML Element_ | "" | Popup content html or element.
 **footer.classes** | _string:class_ | "" | Popup footer element classes
-**footer.buttons** | _object_[] | [] | Footer button list.
+**footer.buttons** | _[object](#footerbuttons-schema)_[] | [] | Footer button list.
 **footer.enable** | _boolean_ | true | Popup footer element enable
 **closeButton.classes** | string:class | "" | Popup closeButton element classes.
 
