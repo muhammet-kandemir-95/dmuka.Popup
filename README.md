@@ -31,40 +31,25 @@ footer.enable | boolean | true | Popup footer element enable
 closeButton.classes | string:class | "" | Popup closeButton element classes.
 
 #### theme Values
-##### ""
-Default white theme.
-##### "blue"
-Blue color theme.
-##### "green"
-Green color theme.
-##### "yellow"
-Yellow color theme.
-##### "red"
-Red color theme.
-##### "gray"
-Gray color theme.
-##### "dark"
-Dark color theme.
+* **""** = Default white theme.
+* **"blue"** = Blue color theme.
+* **"green"** = Green color theme.
+* **"yellow"** = Yellow color theme.
+* **"red"** = Red color theme.
+* **"gray"** = Gray color theme.
+* **"dark"** = Dark color theme.
 
 #### positionX Values
-##### "left"
-Left is "20px".
-##### "center"
-Position always is center.
-##### "right"
-Right is "20px".
-##### string
-Left position as css.
+* **"left"** = Left is "20px".
+* **"center"** = Position always is center.
+* **"right"** = Right is "20px".
+* **string** = Left position as css.
 
 #### positionY Values
-##### "top"
-Top is "20px".
-##### "middle"
-Position always is middle.
-##### "bottom"
-Bottom is "20px".
-##### string
-Top position as css.
+* **"top"** = Top is "20px".
+* **"middle"** = Position always is middle.
+* **"bottom"** = Bottom is "20px".
+* **string** = Top position as css.
 
 #### footer.buttons Schema
 ```javascript
@@ -229,10 +214,8 @@ popup.popupState = {
 }
 ```
 #### Döndüreceği değerler
-##### hidden
-Popup nesnesi gizli durumda.
-##### visible
-Popup nesnesi görünür durumda.
+* **hidden** = Popup nesnesi gizli durumda.
+* **visible** = Popup nesnesi görünür durumda.
 
 #### Örnek Kullanım
 ```javascript
@@ -285,14 +268,10 @@ popup.left = {
 ```
 
 #### Alacağı Hazır Değeler
-##### "left"
-Popup nesnesinin left değeri "0px" olarak alınır.
-##### "center"
-Popup nesnesi sayfada ortalanıcak şekilde değer alır.
-##### "right"
-Popup nesnesinin right değeri "0px" olarak alınır.
-##### <:string>
-Normal css verisi ile left değeri "**px**" veya "**%**" olarak girilebilir. Örnek : "100px", "50%", ...
+* **"left"** = Popup nesnesinin left değeri "0px" olarak alınır.
+* **"center"** = Popup nesnesi sayfada ortalanıcak şekilde değer alır.
+* **"right"** = Popup nesnesinin right değeri "0px" olarak alınır.
+* **string** = Normal css verisi ile left değeri "**px**" veya "**%**" olarak girilebilir. Örnek : "100px", "50%", ...
 
 #### Örnek Kullanım
 ```javascript
@@ -314,14 +293,10 @@ popup.top = {
 ```
 
 #### Alacağı Hazır Değeler
-##### "top"
-Popup nesnesinin top değeri "0px" olarak alınır.
-##### "middle"
-Popup nesnesi sayfada ortalanıcak şekilde değer alır.
-##### "bottom"
-Popup nesnesinin right değeri "0px" olarak alınır.
-##### <:string>
-Normal css verisi ile top değeri "**px**" veya "**%**" olarak girilebilir. Örnek : "100px", "50%", ...
+* **"top"** = Popup nesnesinin top değeri "0px" olarak alınır.
+* **"middle"** = Popup nesnesi sayfada ortalanıcak şekilde değer alır.
+* **"bottom"** = Popup nesnesinin right değeri "0px" olarak alınır.
+* **string** = Normal css verisi ile top değeri "**px**" veya "**%**" olarak girilebilir. Örnek : "100px", "50%", ...
 
 #### Örnek Kullanım
 ```javascript
