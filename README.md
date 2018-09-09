@@ -26,7 +26,7 @@ Name | Type | Default Value | Description
 **content.classes** | _string:class_ | "" | Popup content element classes.
 **content.htmlOrChild** | _string:html_, _HTML Element_ | "" | Popup content html or element.
 **footer.classes** | _string:class_ | "" | Popup footer element classes
-**footer.buttons** | _[object](#footerbuttons-schema)_[] | [] | Footer button list.
+**footer.buttons** | _[object](#footerbuttons-schema)_[ ] | [ ] | Footer button list.
 **footer.enable** | _boolean_ | true | Popup footer element enable
 **closeButton.classes** | string:class | "" | Popup closeButton element classes.
 
@@ -68,7 +68,7 @@ Name | Type | Default Value | Description
 ### Events
 Name | Parameters | Return Type | Run Time
 ---- | ---- | ------------- | -----------
-**onLoad** | _()_ | undefined | When reate instance and elements added to body.
+**onLoad** | _()_ | undefined | When create instance and elements added to body.
 **onOpen** | _()_ | undefined | When execute "[open](#popupopen)" function.
 **onClose** | _()_ | undefined | When execute "[close](#popupclose)" or "[dispose](#popupdispose)"(But when "[popupState](#popuppopupstate)" is "visible") function.
 **onSubmitFooter** | _(footerButtonId)_ | undefined | When click to any footer button.
