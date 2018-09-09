@@ -12,7 +12,7 @@ Bu kütüphaneyi kullanarak web siteleriniz üzerinde kolaylıkla **popup** gös
 Name | Type | Default Value | Description
 ---- | ---- | ------------- | -----------
 **parent** | _HTML Element_ | document.body | Popup parent element.
-**theme** | _string:enum_ | "" | Popup theme name by css.
+**theme** | _[string:enum](#theme-values)_ | "" | Popup theme name by css.
 **classes** | _string:class_ | "" | Popup main element classes.
 **autoDisposeOnClose** | _boolean_ | true | If this value is true then when popup closed, trigger dispose function as auto.
 **width** | _string:css_ | "50%" | Popup window element width.
