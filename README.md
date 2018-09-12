@@ -1,10 +1,10 @@
 # dmuka.Popup (JavaScript Library for Web Sites)
 Demo : http://www.bilgisayarafisildayanadam.com/dmuka.Popup/
 
-Bu kütüphaneyi kullanarak web siteleriniz üzerinde kolaylıkla **popup** gösterebilirsiniz. Bunlara örnek verecek olursak;
-* Evet/Hayır soruları
-* Hızlı kaydet formları
-* Önemli bildirimler
+By using this library, you can easily display popup on your websites. For instance;
+* Yes/ No questions
+* Quick save forms
+* Important notifications
 
 ## Create Instance
 
@@ -73,7 +73,7 @@ Name | Parameters | Return Type | Run Time
 **onClose** | _()_ | undefined | When execute "[close](#popupclose)" or "[dispose](#popupdispose)"(But when "[popupState](#popuppopupstate)" is "visible") function.
 **onSubmitFooter** | _(footerButtonId)_ | undefined | When click to any footer button.
 
-#### Örnek Kullanım
+#### Example Usage
 ```javascript
 var popup = new dmuka.Popup({
             /* Variables --BEGIN */
@@ -162,10 +162,10 @@ var popup = new dmuka.Popup({
 ```
 
 ## Public Variables
-_**Değişkenler hakkında bilmemiz gereken ana kural, değerlerin "get" fonksiyonu ile alındığı ve değerlerin "set" fonksiyonu ile güncellendiğidir!**_
+_**The basic rule you need to know about Variables is that, they are received with “get” function and updated with “set” function!**_
 
 ### popup.DOM
-Bu değişken içerisinde component'ın içerisinde DOM(Document Object Model. Örneğin : body, head, div, ...) verilerini taşımaktadır. Şablonu aşağıdaki gibidir;
+This variable includes DOM (Document Object Model; ex; body, head, div…) data within component. Template is represented below;
 
 ```javascript
 popup.DOM = {
@@ -202,7 +202,7 @@ popup.DOM = {
 }
 ```
 
-#### Örnek Kullanım
+#### Example Usage
 ```javascript
 var mainElement = popup.DOM.main.get();
 var windowElement = popup.DOM.window.get();
@@ -214,25 +214,25 @@ var closeButtonElement = popup.DOM.closeButton.get();
 ```
 
 ### popup.popupState
-Bu değişken içerisinde "popup" nesnesinin durum bilgisini taşımaktadır. Şablonu aşağıdaki gibidir;
+This variable obtains the status information of “popup” item. Template is represented below;
 ```javascript
 popup.popupState = {
   get: <function():string>
 }
 ```
-#### Döndüreceği değerler
-* **hidden** = Popup nesnesi gizli durumda.
-* **visible** = Popup nesnesi görünür durumda.
+#### Return Values
+* **hidden** = Popup item is hidden.
+* **visible** = Popup item is visible.
 
-#### Örnek Kullanım
+#### Example Usage
 ```javascript
 var popupState = popup.popupState.get();
 ```
 
 ### popup.width
-_**Burada önemli detay popup genişliği asla sayfanın genişliğini geçemez!**_
+_**The important fact here is that, popup width cannot outgrow the width of page!**_
 
-Bu değişken içerisinde "popup" nesnesinin genişlik bilgisini taşımaktadır. Şablonu aşağıdaki gibidir;
+This variable includes the width data of “popup” item. Template is represented below;
 ```javascript
 popup.width = {
   get: <function():string>,
@@ -240,16 +240,16 @@ popup.width = {
 }
 ```
 
-#### Örnek Kullanım
+#### Example Usage
 ```javascript
 var popupWidth = popup.width.get();
 popup.width.set('300px');
 ```
 
 ### popup.height
-_**Burada önemli detay popup yüksekliği asla sayfanın yüksekliğini geçemez!**_
+_**The important fact here is that, the height of popup cannot outgrow the height of page!**_
 
-Bu değişken içerisinde "popup" nesnesinin yükseklik bilgisini taşımaktadır. Şablonu aşağıdaki gibidir;
+This variable obtains the height data of “popup” item. Template is represented below;
 ```javascript
 popup.height = {
   get: <function():string>,
@@ -257,16 +257,16 @@ popup.height = {
 }
 ```
 
-#### Örnek Kullanım
+#### Example Usage
 ```javascript
 var popupHeight = popup.height.get();
 popup.height.set('300px');
 ```
 
 ### popup.positionX
-_**Burada önemli detay popup left verisi asla 0 dan küçük olamaz!**_
+_**The important fact here is that, popup data can never be less that 0!**_
 
-Bu değişken içerisinde "popup" nesnesinin left bilgisini taşımaktadır. Şablonu aşağıdaki gibidir;
+This variable includes the left data of “popup” item. Template is represented below;
 ```javascript
 popup.left = {
   get: <function():string>,
@@ -274,13 +274,13 @@ popup.left = {
 }
 ```
 
-#### Alacağı Hazır Değeler
-* **"left"** = Popup nesnesinin left değeri "0px" olarak alınır.
-* **"center"** = Popup nesnesi sayfada ortalanıcak şekilde değer alır.
-* **"right"** = Popup nesnesinin right değeri "0px" olarak alınır.
-* **string** = Normal css verisi ile left değeri "**px**" veya "**%**" olarak girilebilir. Örnek : "100px", "50%", ...
+#### Default values
+* **"left"** = The left value of popup item is assigned as “0px”
+* **"center"** = Popup item is rated to be positioned in the centre of the page.
+* **"right"** = The right value of popup item is assigned as “0px”
+* **string** = Normal css data and left value can be entered as “px” or “%” Example: "100px", "50%", ...
 
-#### Örnek Kullanım
+#### Example Usage
 ```javascript
 var popupPositionX = popup.positionX.get();
 popup.positionX.set('100px');
@@ -288,10 +288,10 @@ popup.positionX.set('30%');
 popup.positionX.set('center');
 ```
 
-### popup.positionX
-_**Burada önemli detay popup top verisi asla 0 dan küçük olamaz!**_
+### popup.positionY
+_**The important fact here is that, the top popup data can never be less than 0!**_
 
-Bu değişken içerisinde "popup" nesnesinin top bilgisini taşımaktadır. Şablonu aşağıdaki gibidir;
+This variable obtains the top data of “popup” item. Template is represented below;
 ```javascript
 popup.top = {
   get: <function():string>,
@@ -299,13 +299,13 @@ popup.top = {
 }
 ```
 
-#### Alacağı Hazır Değeler
-* **"top"** = Popup nesnesinin top değeri "0px" olarak alınır.
-* **"middle"** = Popup nesnesi sayfada ortalanıcak şekilde değer alır.
-* **"bottom"** = Popup nesnesinin right değeri "0px" olarak alınır.
-* **string** = Normal css verisi ile top değeri "**px**" veya "**%**" olarak girilebilir. Örnek : "100px", "50%", ...
+#### Default Values
+* **"top"** = The top value of popup item is assigned as “0px”
+* **"middle"** = Popup item is rated to be positioned in the middle of the page.
+* **"bottom"** = The bottom value of popup item is assigned as “0px”
+* **string** = Normal css data and top value can be entered as "px" or "%" Example: "100px", "50%"...
 
-#### Örnek Kullanım
+#### Example Usage
 ```javascript
 var popupPositionY = popup.positionY.get();
 popup.positionY.set('100px');
@@ -316,7 +316,7 @@ popup.positionY.set('middle');
 ## Public Functions
 
 ### popup.open
-Bu fonksiyon popup nesnesini görünür hale getirir. Şablonu aşağıdaki gibidir;
+This function makes popup item visible. Template is represented below;
 ```javascript
 function popup.open() {
   // codes
@@ -325,13 +325,13 @@ function popup.open() {
 }
 ```
 
-#### Örnek Kullanım
+#### Example Usage
 ```javascript
 popup.open();
 ```
 
 ### popup.close
-Bu fonksiyon popup nesnesini gizli hale getirir. Şablonu aşağıdaki gibidir;
+This function hides popup item. Template is represented below;
 ```javascript
 function popup.close() {
   // codes
@@ -340,13 +340,13 @@ function popup.close() {
 }
 ```
 
-#### Örnek Kullanım
+#### Example Usage
 ```javascript
 popup.close();
 ```
 
 ### popup.dispose
-Bu fonksiyon popup nesnenisin tarayıcı üzerindeki tüm verilerini temizler ve artık kullanılamaz hale getirir. **Bunu işlemi bitmiş olan popuplar için kullanmakta fayda var**. Şablonu aşağıdaki gibidir;
+This function cleans all the data on browser and makes it unavailable. **It is better to use this process on finished popups.** Template is represented below;
 ```javascript
 function popup.dispose() {
   // codes
@@ -355,7 +355,7 @@ function popup.dispose() {
 }
 ```
 
-#### Örnek Kullanım
+#### Example Usage
 ```javascript
 popup.dispose();
 ```
