@@ -5,28 +5,418 @@
     <title>
         dmuka.Popup - Muhammet Kandemir
     </title>
+    </title>
+    <link rel="stylesheet" type="text/css" href="Styles/example-documentation.css">
+
+    <link rel="stylesheet" type="text/css" href="Components/dmuka.Popup/Styles/main.css">
+    <link rel="stylesheet" type="text/css" href="Components/dmuka.Popup/Styles/theme-blue.css">
+    <link rel="stylesheet" type="text/css" href="Components/dmuka.Popup/Styles/theme-dark.css">
+    <link rel="stylesheet" type="text/css" href="Components/dmuka.Popup/Styles/theme-gray.css">
+    <link rel="stylesheet" type="text/css" href="Components/dmuka.Popup/Styles/theme-green.css">
+    <link rel="stylesheet" type="text/css" href="Components/dmuka.Popup/Styles/theme-yellow.css">
+    <link rel="stylesheet" type="text/css" href="Components/dmuka.Popup/Styles/theme-red.css">
+    <script src="Components/dmuka.Popup/Scripts/main.js"></script>
 </head>
 
 <body>
-    <h1>
+
+    <div class="title">
         Welcome dmuka.Popup Documentation
-    </h1>
-    <p>
-        <ul>
-            <li>
-                <a href="Examples/show-popup.html">Show Popup</a>
-            </li>
-            <li>
-                <a href="Examples/custom-footer.html">Custom Footer</a>
-            </li>
-            <li>
-                <a href="Examples/theme-popup.html">Theme Popup</a>
-            </li>
-            <li>
-                <a href="Examples/disable.html">Disable Footer or Header</a>
-            </li>
-        </ul>
-    </p>
+    </div>
+    <div class="example">
+        <span class="description">Default Popup</span>
+        <div class="try-buttons">
+            <button class="try" onclick="showDefaulPopup();">Try Example</button>
+        </div>
+        <script>
+            function showDefaulPopup() {
+                var popup = new dmuka.Popup({
+                    width: "250px",
+                    height: "100px",
+                    header: {
+                        text: "My Popup"
+                    },
+                    content: {
+                        htmlOrChild: "Hello Word"
+                    }
+                });
+
+                popup.open();
+            }
+        </script>
+        <div class="codes">
+            <div class="sub-codes">
+                <pre style='color:#000000;background: #ffffff;'>
+<span style='color:#800000; font-weight:bold; '>function</span> showDefaulPopup<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>var</span> popup <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> dmuka<span style='color:#808030; '>.</span>Popup<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span>
+        width<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>250px</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+        height<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>100px</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+        header<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span>
+            text<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>My Popup</span><span style='color:#800000; '>"</span>
+        <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+        content<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span>
+            htmlOrChild<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Hello Word</span><span style='color:#800000; '>"</span>
+        <span style='color:#800080; '>}</span>
+    <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    popup<span style='color:#808030; '>.</span>open<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+</pre>
+            </div>
+        </div>
+    </div>
+    <div class="example">
+        <span class="description">Theme</span>
+        <div class="try-buttons">
+            <button class="try" onclick="themePopup('');">Default</button>
+            <button class="try" onclick="themePopup('blue');">"blue"</button>
+            <button class="try" onclick="themePopup('green');">"green"</button>
+            <button class="try" onclick="themePopup('yellow');">"yellow"</button>
+            <button class="try" onclick="themePopup('red');">"red"</button>
+            <button class="try" onclick="themePopup('gray');">"gray"</button>
+            <button class="try" onclick="themePopup('dark');">"dark"</button>
+        </div>
+        <script>
+            function themePopup(theme) {
+                var popup = new dmuka.Popup({
+                    theme: theme,
+                    width: "250px",
+                    height: "100px",
+                    header: {
+                        text: "Question"
+                    },
+                    content: {
+                        htmlOrChild: "Do you like that?"
+                    },
+                    footer: {
+                        buttons: [
+                            {
+                                text: "Yeah",
+                                id: "yeah",
+                                focus: true
+                            },
+                            {
+                                text: "Maybe",
+                                id: "maybe"
+                            },
+                            {
+                                text: "No",
+                                id: "no"
+                            }
+                        ]
+                    }
+                });
+
+                popup.open();
+            }
+        </script>
+        <div class="codes">
+            <div class="sub-codes">
+                <pre style='color:#000000;background: #ffffff;'>
+<span style='color:#800000; font-weight:bold; '>var</span> popup <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> dmuka<span style='color:#808030; '>.</span>Popup<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span>
+    theme<span style='color:#800080; '>:</span> &lt;theme&gt;<span style='color:#808030; '>,</span>
+    width<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>250px</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+    height<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>100px</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+    header<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span>
+        text<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Question</span><span style='color:#800000; '>"</span>
+    <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+    content<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span>
+        htmlOrChild<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Do you like that?</span><span style='color:#800000; '>"</span>
+    <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+    footer<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span>
+        buttons<span style='color:#800080; '>:</span> <span style='color:#808030; '>[</span>
+            <span style='color:#800080; '>{</span>
+                text<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Yeah</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+                id<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>yeah</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+                focus<span style='color:#800080; '>:</span> <span style='color:#0f4d75; '>true</span>
+            <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+            <span style='color:#800080; '>{</span>
+                text<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Maybe</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+                id<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>maybe</span><span style='color:#800000; '>"</span>
+            <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+            <span style='color:#800080; '>{</span>
+                text<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>No</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+                id<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>no</span><span style='color:#800000; '>"</span>
+            <span style='color:#800080; '>}</span>
+        <span style='color:#808030; '>]</span>
+    <span style='color:#800080; '>}</span>
+<span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+popup<span style='color:#808030; '>.</span>open<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+            </div>
+        </div>
+    </div>
+    <div class="example">
+        <span class="description">Disable Footer or Header</span>
+        <div class="try-buttons">
+            <button class="try" onclick="disablePopup(false, true);">Disable Header</button>
+            <button class="try" onclick="disablePopup(true, false);">Disable Footer</button>
+            <button class="try" onclick="disablePopup(false, false);">Disable Header &amp; Footer</button>
+        </div>
+        <script>
+            function disablePopup(headerEnable, footerEnable) {
+                var popup = new dmuka.Popup({
+                    width: "250px",
+                    height: "100px",
+                    header: {
+                        text: "Question",
+                        enable: headerEnable
+                    },
+                    content: {
+                        htmlOrChild: "Do you want continue?"
+                    },
+                    footer: {
+                        enable: footerEnable,
+                        buttons: [
+                            {
+                                text: "Yes",
+                                id: "yes"
+                            },
+                            {
+                                text: "No",
+                                id: "no"
+                            },
+                            {
+                                text: "Cancel",
+                                id: "cancel",
+                                focus: true
+                            }
+                        ]
+                    }
+                });
+
+                popup.open();
+            }
+        </script>
+        <div class="codes">
+            <div class="sub-codes">
+<pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>function</span> disablePopup<span style='color:#808030; '>(</span>headerEnable<span style='color:#808030; '>,</span> footerEnable<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>var</span> popup <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> dmuka<span style='color:#808030; '>.</span>Popup<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span>
+        width<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>250px</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+        height<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>100px</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+        header<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span>
+            text<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Question</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+            enable<span style='color:#800080; '>:</span> headerEnable
+        <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+        content<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span>
+            htmlOrChild<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Do you want continue?</span><span style='color:#800000; '>"</span>
+        <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+        footer<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span>
+            enable<span style='color:#800080; '>:</span> footerEnable<span style='color:#808030; '>,</span>
+            buttons<span style='color:#800080; '>:</span> <span style='color:#808030; '>[</span>
+                <span style='color:#800080; '>{</span>
+                    text<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Yes</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+                    id<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>yes</span><span style='color:#800000; '>"</span>
+                <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+                <span style='color:#800080; '>{</span>
+                    text<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>No</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+                    id<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>no</span><span style='color:#800000; '>"</span>
+                <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+                <span style='color:#800080; '>{</span>
+                    text<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Cancel</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+                    id<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>cancel</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+                    focus<span style='color:#800080; '>:</span> <span style='color:#0f4d75; '>true</span>
+                <span style='color:#800080; '>}</span>
+            <span style='color:#808030; '>]</span>
+        <span style='color:#800080; '>}</span>
+    <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    popup<span style='color:#808030; '>.</span>open<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+</pre>
+            </div>
+        </div>
+    </div>
+    <div class="example">
+        <span class="description">Custom Footer</span>
+        <div class="try-buttons">
+            <button class="try" onclick="oneButtonPopup();">One Button</button>
+            <button class="try" onclick="twoButtonPopup();">Two Button</button>
+            <button class="try" onclick="threeButtonPopup();">Three Button</button>
+        </div>
+        <script>
+            function oneButtonPopup() {
+                var popup = new dmuka.Popup({
+                    width: "250px",
+                    height: "100px",
+                    header: {
+                        text: "Message"
+                    },
+                    content: {
+                        htmlOrChild: "Process complated..."
+                    },
+                    footer: {
+                        buttons: [
+                            {
+                                text: "Ok",
+                                id: "ok",
+                                focus: true
+                            }
+                        ]
+                    },
+                    onSubmitFooter: function (footerButtonId) {
+                        alert("Clicked ID = " + footerButtonId);
+                    }
+                });
+
+                popup.open();
+            }
+            function twoButtonPopup() {
+                var popup = new dmuka.Popup({
+                    width: "250px",
+                    height: "100px",
+                    header: {
+                        text: "Question"
+                    },
+                    content: {
+                        htmlOrChild: "Do you want continue?"
+                    },
+                    footer: {
+                        buttons: [
+                            {
+                                text: "Yes",
+                                id: "yes"
+                            },
+                            {
+                                text: "No",
+                                id: "no",
+                                focus: true
+                            }
+                        ]
+                    },
+                    onSubmitFooter: function (footerButtonId) {
+                        alert("Clicked ID = " + footerButtonId);
+                    }
+                });
+
+                popup.open();
+            }
+            function threeButtonPopup() {
+                var popup = new dmuka.Popup({
+                    width: "250px",
+                    height: "100px",
+                    header: {
+                        text: "Question"
+                    },
+                    content: {
+                        htmlOrChild: "What do you think about this?"
+                    },
+                    footer: {
+                        buttons: [
+                            {
+                                text: "Very Good",
+                                id: "very-good"
+                            },
+                            {
+                                text: "Normal",
+                                id: "normal",
+                                focus: true
+                            },
+                            {
+                                text: "Bad",
+                                id: "bad"
+                            }
+                        ]
+                    },
+                    onSubmitFooter: function (footerButtonId) {
+                        alert("Clicked ID = " + footerButtonId);
+                    }
+                });
+
+                popup.open();
+            }
+        </script>
+        <div class="codes">
+            <div class="sub-codes">
+                <pre style='color:#000000;background:#ffffff;'><span style='color:#800000; font-weight:bold; '>function</span> oneButtonPopup<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>var</span> popup <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> dmuka<span style='color:#808030; '>.</span>Popup<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span>
+        width<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>250px</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+        height<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>100px</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+        header<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span>
+            text<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Message</span><span style='color:#800000; '>"</span>
+        <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+        content<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span>
+            htmlOrChild<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Process complated...</span><span style='color:#800000; '>"</span>
+        <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+        footer<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span>
+            buttons<span style='color:#800080; '>:</span> <span style='color:#808030; '>[</span>
+                <span style='color:#800080; '>{</span>
+                    text<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Ok</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+                    id<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>ok</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+                    focus<span style='color:#800080; '>:</span> <span style='color:#0f4d75; '>true</span>
+                <span style='color:#800080; '>}</span>
+            <span style='color:#808030; '>]</span>
+        <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+        onSubmitFooter<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>footerButtonId<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+            <span style='color:#800000; font-weight:bold; '>alert</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Clicked ID = </span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> footerButtonId<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        <span style='color:#800080; '>}</span>
+    <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    popup<span style='color:#808030; '>.</span>open<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>function</span> twoButtonPopup<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>var</span> popup <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> dmuka<span style='color:#808030; '>.</span>Popup<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span>
+        width<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>250px</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+        height<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>100px</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+        header<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span>
+            text<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Question</span><span style='color:#800000; '>"</span>
+        <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+        content<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span>
+            htmlOrChild<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Do you want continue?</span><span style='color:#800000; '>"</span>
+        <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+        footer<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span>
+            buttons<span style='color:#800080; '>:</span> <span style='color:#808030; '>[</span>
+                <span style='color:#800080; '>{</span>
+                    text<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Yes</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+                    id<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>yes</span><span style='color:#800000; '>"</span>
+                <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+                <span style='color:#800080; '>{</span>
+                    text<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>No</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+                    id<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>no</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+                    focus<span style='color:#800080; '>:</span> <span style='color:#0f4d75; '>true</span>
+                <span style='color:#800080; '>}</span>
+            <span style='color:#808030; '>]</span>
+        <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+        onSubmitFooter<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>footerButtonId<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+            <span style='color:#800000; font-weight:bold; '>alert</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Clicked ID = </span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> footerButtonId<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        <span style='color:#800080; '>}</span>
+    <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    popup<span style='color:#808030; '>.</span>open<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+<span style='color:#800000; font-weight:bold; '>function</span> threeButtonPopup<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+    <span style='color:#800000; font-weight:bold; '>var</span> popup <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> dmuka<span style='color:#808030; '>.</span>Popup<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span>
+        width<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>250px</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+        height<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>100px</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+        header<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span>
+            text<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Question</span><span style='color:#800000; '>"</span>
+        <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+        content<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span>
+            htmlOrChild<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>What do you think about this?</span><span style='color:#800000; '>"</span>
+        <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+        footer<span style='color:#800080; '>:</span> <span style='color:#800080; '>{</span>
+            buttons<span style='color:#800080; '>:</span> <span style='color:#808030; '>[</span>
+                <span style='color:#800080; '>{</span>
+                    text<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Very Good</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+                    id<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>very-good</span><span style='color:#800000; '>"</span>
+                <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+                <span style='color:#800080; '>{</span>
+                    text<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Normal</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+                    id<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>normal</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+                    focus<span style='color:#800080; '>:</span> <span style='color:#0f4d75; '>true</span>
+                <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+                <span style='color:#800080; '>{</span>
+                    text<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>Bad</span><span style='color:#800000; '>"</span><span style='color:#808030; '>,</span>
+                    id<span style='color:#800080; '>:</span> <span style='color:#800000; '>"</span><span style='color:#0000e6; '>bad</span><span style='color:#800000; '>"</span>
+                <span style='color:#800080; '>}</span>
+            <span style='color:#808030; '>]</span>
+        <span style='color:#800080; '>}</span><span style='color:#808030; '>,</span>
+        onSubmitFooter<span style='color:#800080; '>:</span> <span style='color:#800000; font-weight:bold; '>function</span> <span style='color:#808030; '>(</span>footerButtonId<span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+            <span style='color:#800000; font-weight:bold; '>alert</span><span style='color:#808030; '>(</span><span style='color:#800000; '>"</span><span style='color:#0000e6; '>Clicked ID = </span><span style='color:#800000; '>"</span> <span style='color:#808030; '>+</span> footerButtonId<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+        <span style='color:#800080; '>}</span>
+    <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+    popup<span style='color:#808030; '>.</span>open<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+<span style='color:#800080; '>}</span>
+</pre>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
