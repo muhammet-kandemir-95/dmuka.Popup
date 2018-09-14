@@ -173,11 +173,11 @@ dmuka.Popup = function (parameters) {
     // --------------------
 
     private.function.open = function () {
+        // Only working when popupState is "hidden"
         if (private.variable.popupState === "hidden") {
             private.variable.DOM.main.setAttribute("data-lock", "true");
 
             setTimeout(() => {
-                // Only working when popupState is "visible"
                 private.variable.popupState = "visible";
                 private.variable.DOM.main.setAttribute("data-state", private.variable.popupState);
 
@@ -345,10 +345,7 @@ dmuka.Popup = function (parameters) {
 
         // Load close button event --BEGIN
         private.variable.DOM.closeButton.addEventListener("click", function (e) {
-            // Only working when popupState is "visible"
-            if (private.variable.popupState === "visible") {
-                private.function.close();
-            }
+            private.function.close();
         });
         // Load close button event --END
 
