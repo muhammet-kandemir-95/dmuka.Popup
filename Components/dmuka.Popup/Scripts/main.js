@@ -364,7 +364,7 @@ dmuka.Popup = function (parameters) {
         private.variable.DOM.footer.content.setAttribute("class", "dmuka-popup-footer " + private.variable.footer.classes);
         // Set footer buttons classes --BEGIN
         for (var footerButtonIndex = 0; footerButtonIndex < private.variable.DOM.footer.buttons.length; footerButtonIndex++) {
-            private.variable.DOM.footer.buttons[footerButtonIndex].setAttribute("class", "dmuka-popup-footer-button " + private.variable.footer.buttons[footerButtonIndex].classes || "");
+            private.variable.DOM.footer.buttons[footerButtonIndex].setAttribute("class", "dmuka-popup-footer-button " + (private.variable.footer.buttons[footerButtonIndex].classes || ""));
         }
         // Set footer buttons classes --END
         private.variable.DOM.closeButton.setAttribute("class", "dmuka-popup-closebutton " + private.variable.closeButton.classes);
