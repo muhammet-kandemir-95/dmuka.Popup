@@ -410,8 +410,6 @@ dmuka.Popup = function (parameters) {
         }
         // Add set to properties --END
 
-        private.function.calculatePositionAndSize();
-
         // Add window resize events --BEGIN
         private.event.windowOnResize = function (e) {
             private.function.calculatePositionAndSize();
@@ -421,6 +419,8 @@ dmuka.Popup = function (parameters) {
 
         // Main add to body
         private.variable.parent.appendChild(private.variable.DOM.main);
+
+        private.function.calculatePositionAndSize();
 
         private.event.load.call(me);
     }
