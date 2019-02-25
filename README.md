@@ -1,5 +1,5 @@
 # dmuka.Popup (JavaScript Library for Web Sites)
-Demo : http://www.bilgisayarafisildayanadam.com/dmuka.Popup/
+Demo : https://muhammet-kandemir-95.github.io/dmuka.Popup/
 
 By using this library, you can easily display popup on your websites. For instance;
 * Yes/ No questions
